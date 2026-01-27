@@ -1,0 +1,9 @@
+com\musicplayer\service\MusicStatistics.class
+com\musicplayer\model\Playlist.class
+com\musicplayer\service\MusicStatistics$PlaySession.class
+com\musicplayer\service\MusicLibrary.class
+com\musicplayer\service\AudioEffects.class
+com\musicplayer\service\PlaylistManager.class
+com\musicplayer\service\MusicPlayer.class
+com\musicplayer\model\Song.class
+com\musicplayer\service\MusicPlayer$1.class
