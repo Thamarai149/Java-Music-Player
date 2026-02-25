@@ -5,7 +5,14 @@ import java.util.Scanner;
 
 import com.musicplayer.model.Playlist;
 import com.musicplayer.model.Song;
-import com.musicplayer.service.*;
+import com.musicplayer.service.AudioEffects;
+import com.musicplayer.service.MusicLibrary;
+import com.musicplayer.service.MusicPlayer;
+import com.musicplayer.service.MusicStatistics;
+import com.musicplayer.service.MusicVisualizer;
+import com.musicplayer.service.PlaylistManager;
+import com.musicplayer.service.SleepTimer;
+import com.musicplayer.service.SmartPlaylistGenerator;
 
 public class MusicPlayerApp {
     private final MusicLibrary musicLibrary;
@@ -63,6 +70,15 @@ public class MusicPlayerApp {
             while (running) {
                 displayMenu();
                 String choice = scanner.nextLine().trim();
+                
+                // Handle vol+/vol- before toLowerCase() to preserve the +/- symbols
+                if (choice.equals("vol+") || choice.equalsIgnoreCase("vol+")) {
+                    audioEffects.adjustMasterVolume(0.1f);
+                    continue;
+                } else if (choice.equals("vol-") || choice.equalsIgnoreCase("vol-")) {
+                    audioEffects.adjustMasterVolume(-0.1f);
+                    continue;
+                }
                 
                 switch (choice.toLowerCase()) {
                     case "1":
@@ -130,12 +146,6 @@ public class MusicPlayerApp {
                     case "16":
                     case "smart":
                         handleSmartPlaylistMenu(scanner);
-                        break;
-                    case "vol+":
-                        audioEffects.adjustMasterVolume(0.1f);
-                        break;
-                    case "vol-":
-                        audioEffects.adjustMasterVolume(-0.1f);
                         break;
                     case "help":
                         displayHelpMenu();
