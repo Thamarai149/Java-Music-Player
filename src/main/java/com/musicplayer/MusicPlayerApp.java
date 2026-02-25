@@ -34,7 +34,7 @@ public class MusicPlayerApp {
     }
     
     public void start() {
-        System.out.println("[MUSIC] Welcome to Enhanced Java Music Player! [MUSIC]");
+        System.out.println("[MUSIC] Welcome to Java Music Player! [MUSIC]");
         System.out.println("=".repeat(50));
         System.out.println("[NEW] NEW FEATURES: Audio Effects | Visualizer | Smart Playlists");
         System.out.println("[TIMER] Sleep Timer | [STATS] Statistics | [AI] AI Recommendations");
